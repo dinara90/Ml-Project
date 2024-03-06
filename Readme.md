@@ -31,7 +31,22 @@ We manually collected data using our camera by recording videos of different ind
 
 
 Model Description
-Our model leverages a combination of MediaPipe Holistic for real-time hand tracking and a recurrent neural network (RNN) with LSTM layers for sequence learning. 
+Our gesture recognition model is an amalgamation of cutting-edge computer vision techniques and advanced machine learning architectures designed for sequential data analysis. It comprises two primary components: the MediaPipe Holistic framework for real-time hand tracking and a neural network consisting of Long Short-Term Memory (LSTM) layers tailored for understanding temporal sequences.
+
+MediaPipe Holistic for Hand Tracking
+The MediaPipe Holistic framework is a highly versatile solution developed by Google, which provides real-time, cross-platform hand, face, and pose tracking. For our purposes, the hand tracking feature is of particular interest. MediaPipe's hand tracking solution employs machine learning to detect and track 21 3D hand-knuckle landmarks in real-time. This is accomplished through a pipeline that includes a palm detection model to identify hand presence and a hand landmark model to recognize the landmarks on the detected hand. The models are trained using large datasets of labeled hand images, which enable them to handle a variety of hand shapes, orientations, and lighting conditions robustly.
+
+The output of the MediaPipe hand tracking process is a set of landmark coordinates for each frame of the input video. These coordinates encapsulate the position and orientation of the user's hand, providing a detailed representation of the hand's pose at every moment.
+
+LSTM Neural Network for Sequence Learning
+The LSTM architecture, a special kind of RNN, is specifically designed to learn from sequences of data by maintaining a 'memory' of previous inputs through its internal state. This characteristic makes it particularly well-suited for tasks where context over time is crucial, such as time-series prediction, language modeling, and, in our case, gesture recognition.
+
+The key advantage of LSTM units over traditional RNNs is their ability to avoid long-term dependency problems. Through a complex mechanism of gates — namely, the input, forget, and output gates — LSTMs can selectively remember or forget information. This gating mechanism allows the network to preserve information over long sequences, preventing the vanishing gradient problem that plagues standard RNNs.
+
+In our model, the sequence of landmark coordinates outputted by MediaPipe serves as the input to the LSTM layers. Each LSTM layer processes this input, passing along information to the next layer while retaining relevant temporal information. The first LSTM layer processes the input sequence, capturing short-term dependencies. Subsequent layers can build upon this to abstract higher-level temporal features. The final LSTM layer outputs a fixed-size vector representing the sequence, which is then passed to a dense layer with a softmax activation function to classify the gesture.
+
+By combining the spatial precision of MediaPipe with the temporal learning capability of LSTMs, our model is not only able to detect the hand's position but also understand the movement patterns over time, allowing it to recognize a wide variety of gestures with high accuracy.
+
 ![Model Description1](images/Model%20Description1.png)
 ![Model Description2](images/Model%20Description2.png)
 
@@ -44,8 +59,6 @@ The training process was visualized through the plotting of loss and accuracy ov
 ![Results2](images/Results2.png)
 ![Results3](images/Results3.png)
 ![Results4](images/Results4.png)
-
-Our system's performance indicates a high accuracy in recognizing the defined gestures, suggesting that the LSTM model effectively learned the temporal patterns associated with each gesture.
 
 Discussion:
 Critical Review
@@ -65,3 +78,8 @@ https://drive.google.com/drive/folders/18x5JD3Sm1bGLDQBJAC1ZzF-DQeBTtf0P?usp=dri
 MediaPipe Holistic documentation. https://github.com/google/mediapipe/blob/master/docs/solutions/holistic.md
 TensorFlow LSTM documentation. https://www.tensorflow.org/api_docs/python/tf/keras/layers/LSTM
 Chen, Y., & Wang, J. (2023). "Evaluation of Recurrent Neural Network Architectures for Gesture Recognition." Pattern Recognition Letters.
+Project showcase video on YouTube: 
+https://youtube.com/watch?v=ouWV9X21UO8
+GitHub:
+https://github.com/assylbek-creation/Ml-Project/blob/master/Readme.md
+
