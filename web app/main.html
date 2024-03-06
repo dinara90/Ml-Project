@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hand gesture recognition with TensorFlow.js</title>
+  <!-- Подключение Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #video {
+      border: 3px solid #333;
+      margin-bottom: 15px;
+    }
+    #capture {
+      padding: 10px 20px;
+      font-size: 18px;
+    }
+    .result-container {
+      width: 640px;
+      margin-top: 15px;
+    }
+    .result {
+      background-color: #fff;
+      padding: 15px;
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container text-center">
+    <h1 class="mb-4">Hand gesture recognition with TensorFlow.js</h1>
+    <video id="video" width="640" height="480" autoplay class="mb-3"></video>
+    <button id="capture" class="btn btn-primary btn-lg">Capture a frame</button>
+    <div id="results" class="result-container"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+  <script src="main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.8/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
