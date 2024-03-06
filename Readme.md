@@ -15,20 +15,20 @@ In vision-based gesture recognition, there are two main approaches: 3D model-bas
 The most successful recent systems typically employ a combination of these methods, using sophisticated algorithms to track and analyze hand movements in real time. Significant research has been conducted on improving the accuracy and robustness of these systems under varying conditions, such as different lighting environments, backgrounds, and hand sizes.
 
 For further information and in-depth comparisons, one may refer to the following surveys and studies which detail the progress and challenges in the field:
-1.	A systematic review on hand gesture recognition techniques, challenges, and applications (NCBI).
-2.	Recent methods and databases in vision-based hand gesture recognition: a review (ScienceDirect).
-3.	Comparative study of hand gesture recognition systems (Semantic Scholar).
+
+1. A systematic review on hand gesture recognition techniques, challenges, and applications (NCBI).
+2. Recent methods and databases in vision-based hand gesture recognition: a review (ScienceDirect).
+3. Comparative study of hand gesture recognition systems (Semantic Scholar).
 
 Current Work
 In our current project, we developed a gesture recognition system using a standard webcam. Our system processes video input to detect and interpret specific hand gestures, translating them into predefined commands. This report details the methods used in data collection, model building, training, and the results obtained.
 
 Data and Methods:
 Data Information
-We manually collected data using our camera by recording videos of different individuals performing a set of predefined gestures. 
+We manually collected data using our camera by recording videos of different individuals performing a set of predefined gestures.
 ![Data Information1](images/Data%20Information1.png)
 ![Data Information2](images/Data%20Information2.jpg)
 ![Data Information3](images/Data%20Information3.jpg)
-
 
 Model Description
 Our gesture recognition model is an amalgamation of cutting-edge computer vision techniques and advanced machine learning architectures designed for sequential data analysis. It comprises two primary components: the MediaPipe Holistic framework for real-time hand tracking and a neural network consisting of Long Short-Term Memory (LSTM) layers tailored for understanding temporal sequences.
@@ -50,7 +50,6 @@ By combining the spatial precision of MediaPipe with the temporal learning capab
 ![Model Description1](images/Model%20Description1.png)
 ![Model Description2](images/Model%20Description2.png)
 
- 
 The MediaPipe framework provides a robust platform for hand landmark detection, which serves as input to our LSTM-based model designed to capture the temporal dynamics of gesture sequences.
 
 Results:
@@ -70,16 +69,15 @@ Additionally, exploring the integration of real-time feedback mechanisms, where 
 
 References and Materials
 Doe, J., & Smith, A. (2024). "A Comprehensive Survey on Vision-Based Gesture Recognition Techniques." Journal of Machine Learning Research.
-Liu, H., & Zhang, L. (2024). "Advances in Hand Gesture Recognition for HCI." International Journal of Computer Vision. 
-Patel, R. (2023). "Gesture Recognition with Convolutional Neural Networks." Proceedings of the IEEE Conference on Computer Vision. 
+Liu, H., & Zhang, L. (2024). "Advances in Hand Gesture Recognition for HCI." International Journal of Computer Vision.
+Patel, R. (2023). "Gesture Recognition with Convolutional Neural Networks." Proceedings of the IEEE Conference on Computer Vision.
 Kim, T., & Lee, S. (2023). "Real-Time Gesture Recognition Using Deep Learning." ACM Transactions on Intelligent Systems and Technology.
-Dataset for hand gesture recognition used in the project. 
+Dataset for hand gesture recognition used in the project.
 https://drive.google.com/drive/folders/18x5JD3Sm1bGLDQBJAC1ZzF-DQeBTtf0P?usp=drive_link
 MediaPipe Holistic documentation. https://github.com/google/mediapipe/blob/master/docs/solutions/holistic.md
 TensorFlow LSTM documentation. https://www.tensorflow.org/api_docs/python/tf/keras/layers/LSTM
 Chen, Y., & Wang, J. (2023). "Evaluation of Recurrent Neural Network Architectures for Gesture Recognition." Pattern Recognition Letters.
-Project showcase video on YouTube: 
+Project showcase video on YouTube:
 https://youtube.com/watch?v=ouWV9X21UO8
 GitHub:
-https://github.com/assylbek-creation/Ml-Project/blob/master/Readme.md
-
+https://github.com/dinara90/Ml-Project.git
